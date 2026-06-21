@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang='zh-CN'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>贪吃蛇游戏</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+    <div class='container'>
+        <h1>🐍 贪吃蛇游戏</h1>
+        <div class='game-info'>
+            <div class='score'>分数: <span id='score'>0</span></div>
+            <div class='high-score'>最高分: <span id='highScore'>0</span></div>
+        </div> <canvas id='gameCanvas' width='400' height='400'></canvas>
+        <div class='controls'> <button id='restartBtn'>重新开始</button>
+            <div class='direction-controls'> <button class='dir-btn' data-dir='up'>↑</button> <button class='dir-btn'
+                    data-dir='left'>←</button> <button class='dir-btn' data-dir='down'>↓</button> <button
+                    class='dir-btn' data-dir='right'>→</button> </div>
+        </div>
+        <div class='instructions'>
+            <p>使用键盘方向键 或 点击方向按钮控制蛇的移动</p>
+        </div>
+    </div>
+    <script src='script.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.DS_Store
+.vscode/
+.idea/
+*.log
+.pytest_cache/
+coverage/
+npm-debug.log*
+.sass-cache/
+*.tgz
+*.swp
