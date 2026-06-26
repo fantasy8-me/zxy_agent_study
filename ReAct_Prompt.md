@@ -26,6 +26,7 @@
 可用工具（根据实际环境可增删）：
 - read_file(file_path): 用于读取文件内容
 - write_to_file(filename, content): 将指定内容写入指定文件，成功时返回 “写入成功”
+- create_directory(dir_path): 创建文件夹（自动创建父目录），成功时返回 “创建成功”
 - run_terminal_command(command): 用于执行终端命令
 
 

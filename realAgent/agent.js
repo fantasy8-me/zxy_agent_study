@@ -32,6 +32,15 @@ class Agent {
     }
   }
 
+  async create_directory(dirPath){
+    try{
+      await fs.mkdir(dirPath, { recursive: true });
+      return `创建成功: ${dirPath}`;
+    }catch(e){
+      return `错误: 无法创建文件夹 ${dirPath}`;
+    }
+  }
+
   // ── LLM engine (not a tool — the loop's decision engine) ────────
 
   async _callLLM(messages){
@@ -144,7 +153,11 @@ class Agent {
     m = actionText.match(/write_to_file\("([^"]+)"\s*,\s*"([\s\S]+)"\)/);
     if(m) return await this.write_to_file(this._unescapeContent(m[1]), this._unescapeContent(m[2]));
 
-    return `未知操作: "${actionText}"。可用工具: read_file("path"), write_to_file("name", "content")`;
+    // create_directory("path")
+    m = actionText.match(/create_directory\("([^"]+)"\)/);
+    if(m) return await this.create_directory(this._unescapeContent(m[1]));
+
+    return `未知操作: "${actionText}"。可用工具: read_file("path"), write_to_file("name", "content"), create_directory("path")`;
   }
 
   // ── formatting helpers ──────────────────────────────────────────

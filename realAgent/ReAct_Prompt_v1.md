@@ -45,6 +45,7 @@
 
 - read_file(file_path): 读取指定文件的内容，返回文件文本
 - write_to_file(filename, content): 将 content 写入 filename，成功时返回 "写入成功"
+- create_directory(dir_path): 创建文件夹（自动创建所有不存在的父目录），成功时返回 "创建成功"
 
 ## 注意事项
 
